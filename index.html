@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>podo list</title>
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-decoration: none;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        h1{
+            text-align: center;
+        }
+        .container{
+            text-align: center;
+        }
+        input{
+            padding: 10px;
+        }
+        button{
+            padding: 5px;
+            margin: 5px;
+            background-color: rgb(166, 167, 211);
+        }
+ 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Input</h1>
+        <input type="text" id="userInput" placeholder="Type something here...">
+        <br>
+        <br>
+        <button onclick="saveInput()">Enter</button>
+        <button onclick="removeFound()">Removed input</button>
+        <ol id="result"></ol>    
+    </div>
+
+    <script>
+        let newArry = [];
+        function saveInput() {
+           
+            const input = document.getElementById('userInput').value;
+  newArry.push(input)
+  pushList();
+        }
+        function removeFound(){
+            newArry.pop();
+            pushList();
+        }
+        function pushList(){
+            let result1 = "";
+            for(let i = 0; i <newArry.length; i++ ){
+            result1 +=`<li> ${newArry[i]}</li>`;
+        }
+        
+                document.querySelector("#result").innerHTML = result1
+        }
+      
+    </script> 
+
+</body>
+</html>
